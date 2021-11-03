@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import LocationsJSON from "../assets/locations.json";
 import CitesJSON from "../assets/cities.json";
+import {MatSidenav} from "@angular/material/sidenav";
 
 interface LOCATION {
   lat: number,
@@ -31,6 +32,24 @@ export class AppComponent {
     this.default_lat = city.lat
     this.default_lng = city.lng
     this.default_zoom = 12
+  }
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  isExpanded = false;
+  showCitySubmenu: boolean = false;
+  showSettingSubmenu: boolean = false;
+  isShowing = false;
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
   }
 
 }
