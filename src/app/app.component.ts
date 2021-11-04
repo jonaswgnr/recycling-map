@@ -25,7 +25,7 @@ export class AppComponent {
   cities: CITIES[] = CitesJSON
   default_lat = 51.678418;
   default_lng = 7.809007;
-  default_zoom = 8;
+  default_zoom = 6;
 
   handleClick($event: MouseEvent, city: CITIES) {
     console.log(city.name)
